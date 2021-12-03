@@ -14,7 +14,7 @@ import {
   FirebaseRecaptchaVerifier,
 } from "expo-firebase-recaptcha";
 // import { initializeApp, getApp } from "firebase/app";
-import { app } from "../../../src/firebase";
+import { app } from "../firebase";
 import {
   getAuth,
   PhoneAuthProvider,

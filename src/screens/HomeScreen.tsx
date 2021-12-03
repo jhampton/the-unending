@@ -9,11 +9,14 @@ import { AuthenticatedUserContext } from "../navigation/AuthenticatedUserProvide
 
 const auth = getAuth(app);
 
-export default function HomeScreen() {
-  const { user } = useContext(AuthenticatedUserContext);
+export default function HomeScreen({ navigation }) {
+  const { user, setUser } = useContext(AuthenticatedUserContext);
   const handleSignOut = async () => {
     try {
+      console.log("handleSignOut:press");
       await auth.signOut();
+      // @ts-ignore TODO: Figure out how to type a NULL setState
+      setUser(null);
     } catch (error) {
       console.log(error);
     }
