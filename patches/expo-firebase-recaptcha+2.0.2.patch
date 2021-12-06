@@ -1,17 +1,19 @@
 diff --git a/node_modules/expo-firebase-recaptcha/build/FirebaseRecaptchaVerifier.js b/node_modules/expo-firebase-recaptcha/build/FirebaseRecaptchaVerifier.js
-index ba7804c..e496ee7 100644
+index ba7804c..cdf276c 100644
 --- a/node_modules/expo-firebase-recaptcha/build/FirebaseRecaptchaVerifier.js
 +++ b/node_modules/expo-firebase-recaptcha/build/FirebaseRecaptchaVerifier.js
-@@ -9,5 +9,6 @@ export default class FirebaseRecaptchaVerifier {
+@@ -9,5 +9,8 @@ export default class FirebaseRecaptchaVerifier {
      async verify() {
          return this.token;
      }
-+    async _reset(){ }
++    async _reset() {
++        return
++    }
  }
  //# sourceMappingURL=FirebaseRecaptchaVerifier.js.map
 \ No newline at end of file
 diff --git a/node_modules/expo-firebase-recaptcha/build/FirebaseRecaptchaVerifierModal.js b/node_modules/expo-firebase-recaptcha/build/FirebaseRecaptchaVerifierModal.js
-index fa4a0e1..a0d5da8 100644
+index fa4a0e1..4eb5518 100644
 --- a/node_modules/expo-firebase-recaptcha/build/FirebaseRecaptchaVerifierModal.js
 +++ b/node_modules/expo-firebase-recaptcha/build/FirebaseRecaptchaVerifierModal.js
 @@ -28,6 +28,7 @@ export default class FirebaseRecaptchaVerifierModal extends React.Component {

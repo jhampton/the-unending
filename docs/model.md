@@ -4,7 +4,7 @@
 
 - Connections
   - Used to establish 1:1 connections or groups
-- Memories
+- Notes
   - A collection of "memories" - individual moments in time that have the following:
     - Location
     - Time/Date
