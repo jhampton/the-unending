@@ -25,13 +25,56 @@ export default function HomeScreen({ navigation }) {
     <View style={styles.container}>
       <StatusBar style="dark" />
       <View style={styles.row}>
-        <Text style={styles.title}>Welcome {user?.email}!</Text>
+        <Text style={styles.title}>3 new notes</Text>
         <IconButton
           name="logout"
           size={24}
           color="#fff"
           onPress={handleSignOut}
         />
+      </View>
+      <View
+        style={{ position: "relative", top: 10, width: "100%", height: "80%" }}
+      >
+        <View
+          style={[
+            styles.card,
+            {
+              top: "-10%",
+              zIndex: 1,
+              opacity: 0.6,
+              transform: [{ scale: 0.8 }],
+            },
+          ]}
+        >
+          <Text>Card 3</Text>
+        </View>
+        <View
+          style={[
+            styles.card,
+            {
+              top: "-3%",
+              zIndex: 2,
+              opacity: 0.8,
+              transform: [{ scale: 0.9 }],
+            },
+          ]}
+        >
+          <Text>Card 2</Text>
+        </View>
+        <View
+          style={[
+            styles.card,
+            {
+              top: "5%",
+              zIndex: 3,
+              opacity: 1.0,
+              transform: [{ scale: 1.0 }],
+            },
+          ]}
+        >
+          <Text>Card 1</Text>
+        </View>
       </View>
       <Text style={styles.text}>Your UID is: {user?.uid} </Text>
     </View>
@@ -41,7 +84,7 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#e93b81",
+    backgroundColor: "#030203",
     paddingTop: 50,
     paddingHorizontal: 12,
   },
@@ -60,5 +103,15 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "normal",
     color: "#fff",
+  },
+  card: {
+    position: "absolute",
+    top: 30,
+    height: "90%",
+    width: "90%",
+    backgroundColor: "#f4f4f4",
+    left: "5%",
+    padding: 12,
+    borderRadius: 12,
   },
 });

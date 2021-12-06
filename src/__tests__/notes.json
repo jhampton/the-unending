@@ -1,0 +1,12 @@
+[
+  {
+    "id": "1",
+    "renderer": "html",
+    "attachments": [
+      {
+        "id": "1",
+        "content": "<html><head></head><body><em>This is cool</em?</body></html>"
+      }
+    ]
+  }
+]
