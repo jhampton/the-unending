@@ -4,11 +4,32 @@ import React, { useContext } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 import { IconButton } from "../components";
-import SwipeCardStack from "../components/SwipeCardStack";
+import Swiper from "@ilterugur/react-native-deck-swiper-renewed";
 import { app } from "../firebase";
 import { AuthenticatedUserContext } from "../navigation/AuthenticatedUserProvider";
 
 const auth = getAuth(app);
+
+const renderCard = (card: any, index: number) => {
+  return (
+    <View style={styles.card}>
+      <Text style={styles.text}>
+        {card} - {index}
+      </Text>
+    </View>
+  );
+};
+const onSwiped = (type: any) => {
+  console.log(`on swiped ${type}`);
+};
+
+const onSwipedAllCards = () => {
+  console.log("Swiped all cards");
+};
+
+const swipeLeft = () => {
+  console.log("left");
+};
 
 export default function HomeScreen({ navigation }) {
   const { user, setUser } = useContext(AuthenticatedUserContext);
@@ -34,8 +55,23 @@ export default function HomeScreen({ navigation }) {
           onPress={handleSignOut}
         />
       </View>
-      <SwipeCardStack />
-      <Text style={styles.text}>Your UID is: {user?.uid} </Text>
+      <View style={styles.row}>
+        <Swiper
+          infinite={true}
+          containerStyle={styles.container}
+          cards={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+          renderCard={renderCard}
+          stackSize={5}
+          stackSeparation={-25}
+          animateOverlayLabelsOpacity
+          animateCardOpacity
+          onTapCard={() => alert("Tapped")}
+          swipeBackCard={true}
+        />
+      </View>
+      <View style={styles.row}>
+        <Text style={styles.text}>Your UID is: {user?.uid} </Text>
+      </View>
     </View>
   );
 }
@@ -64,13 +100,17 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   card: {
+    backgroundColor: "#878787",
     position: "absolute",
     top: 30,
-    height: "90%",
+    height: "80%",
     width: "90%",
-    backgroundColor: "#f4f4f4",
     left: "5%",
     padding: 12,
     borderRadius: 12,
+    shadowColor: "#000000",
+    shadowOffset: { width: 0, height: 10 },
+    shadowRadius: 14,
+    shadowOpacity: 0.8,
   },
 });
