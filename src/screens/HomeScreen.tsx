@@ -4,6 +4,7 @@ import React, { useContext } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 import { IconButton } from "../components";
+import SwipeCardStack from "../components/SwipeCardStack";
 import { app } from "../firebase";
 import { AuthenticatedUserContext } from "../navigation/AuthenticatedUserProvider";
 
@@ -33,7 +34,7 @@ export default function HomeScreen({ navigation }) {
           onPress={handleSignOut}
         />
       </View>
-      {/* CardStack */}
+      <SwipeCardStack />
       <Text style={styles.text}>Your UID is: {user?.uid} </Text>
     </View>
   );
