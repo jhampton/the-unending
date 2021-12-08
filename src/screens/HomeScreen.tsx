@@ -33,49 +33,7 @@ export default function HomeScreen({ navigation }) {
           onPress={handleSignOut}
         />
       </View>
-      <View
-        style={{ position: "relative", top: 10, width: "100%", height: "80%" }}
-      >
-        <View
-          style={[
-            styles.card,
-            {
-              top: "-10%",
-              zIndex: 1,
-              opacity: 0.6,
-              transform: [{ scale: 0.8 }],
-            },
-          ]}
-        >
-          <Text>Card 3</Text>
-        </View>
-        <View
-          style={[
-            styles.card,
-            {
-              top: "-3%",
-              zIndex: 2,
-              opacity: 0.8,
-              transform: [{ scale: 0.9 }],
-            },
-          ]}
-        >
-          <Text>Card 2</Text>
-        </View>
-        <View
-          style={[
-            styles.card,
-            {
-              top: "5%",
-              zIndex: 3,
-              opacity: 1.0,
-              transform: [{ scale: 1.0 }],
-            },
-          ]}
-        >
-          <Text>Card 1</Text>
-        </View>
-      </View>
+      {/* CardStack */}
       <Text style={styles.text}>Your UID is: {user?.uid} </Text>
     </View>
   );
