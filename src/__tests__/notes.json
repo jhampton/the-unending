@@ -5,7 +5,18 @@
     "attachments": [
       {
         "id": "1",
-        "content": "<html><head></head><body><em>This is cool</em?</body></html>"
+        "html": "<html><head></head><body><em>This is cool</em?</body></html>",
+        "url": "https://yahoo.com"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "renderer": "gallery",
+    "attachments": [
+      {
+        "id": "1",
+        "images": "<html><head></head><body><em>This is cool</em?</body></html>"
       }
     ]
   }

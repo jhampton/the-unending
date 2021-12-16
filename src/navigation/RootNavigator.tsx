@@ -1,12 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { View, ActivityIndicator } from "react-native";
+import { View, ActivityIndicator, Text, StyleSheet } from "react-native";
 
 import { app } from "../firebase";
 import { AuthenticatedUserContext } from "./AuthenticatedUserProvider";
 import AuthStack from "./AuthStack";
 import HomeStack from "./HomeStack";
 import { getAuth } from "@firebase/auth";
+
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Button } from "../components";
+const Tab = createBottomTabNavigator();
 
 const auth = getAuth(app);
 // const auth = Auth
@@ -43,9 +47,55 @@ export default function RootNavigator() {
     );
   }
 
+  // Tab Navigator
   return (
     <NavigationContainer>
-      {user ? <HomeStack /> : <AuthStack />}
+      {user ? (
+        <Tab.Navigator
+          tabBar={(props) => {
+            // console.log(props);
+            return (
+              <View style={styles.tabBar}>
+                {/* <Button
+                  backgroundColor="#ff0000"
+                  onPress={() => alert("hi")}
+                  containerStyle={{ borderRadius: 15 }}
+                  title={"⏺"}
+                  width="20%"
+                />
+                <Text style={{ color: "#ff0000" }}>Test</Text> */}
+              </View>
+            );
+          }}
+          screenOptions={{
+            headerShown: false,
+            tabBarShowLabel: false,
+            // tabBarStyle: {
+            //   position: "absolute",
+            //   backgroundColor: "transparent",
+            //   borderWidth: 0,
+            // },
+          }}
+        >
+          <Tab.Screen name="Main" component={HomeStack} />
+        </Tab.Navigator>
+      ) : (
+        <AuthStack />
+      )}
     </NavigationContainer>
   );
 }
+
+const styles = StyleSheet.create({
+  tabBar: {
+    backgroundColor: "transparent",
+    height: "15%",
+    width: "100%",
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    zIndex: 1,
+    flex: 1,
+    alignItems: "center",
+  },
+});

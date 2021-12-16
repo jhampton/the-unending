@@ -50,7 +50,6 @@ export default function App() {
 
   const formatPhoneNumber = (phoneNumber: string) => {
     if (!phoneNumber.startsWith("+")) {
-      console.log("+1" + phoneNumber);
       return "+1" + phoneNumber;
     }
     return phoneNumber;

@@ -16,7 +16,7 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "ios": {
+    "__ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.iamthefury.the-unending"
     },
@@ -28,6 +28,9 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "ios": {
+      "bundleIdentifier": "com.iamthefury.the-unending"
     }
   }
 }
