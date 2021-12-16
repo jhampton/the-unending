@@ -48,7 +48,7 @@ export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.outerContainer}>
       <StatusBar style="light" />
-      <View style={styles.row}>
+      {/* <View style={styles.row}>
         <Text style={styles.title}>3 new notes</Text>
         <IconButton
           name="logout"
@@ -56,7 +56,7 @@ export default function HomeScreen({ navigation }) {
           color="#fff"
           onPress={handleSignOut}
         />
-      </View>
+      </View> */}
       <Swiper
         infinite={true}
         containerStyle={styles.cardContainer}
