@@ -19,6 +19,9 @@ export const NoteCard: React.FC<NoteCardProps> = ({
       >
         <Text style={styles.h1}>January 31, 2031</Text>
         <Text style={styles.h2}>Fort Worth, Texas</Text>
+        <Text style={styles.bodySerif}>
+          Lorem ipsum solo dor amit. Blady blah blah.
+        </Text>
       </ImageBackground>
     </View>
   );
@@ -62,6 +65,17 @@ const styles = StyleSheet.create({
     // textShadowRadius: 3,
     backgroundColor: "#00000044",
     marginTop: 6,
+    padding: 6,
+  },
+  bodySerif: {
+    alignSelf: "center",
+    fontSize: 32,
+    fontFamily: "Arvo_400Regular",
+    color: "#fffefe",
+    // textShadowColor: "#333333",
+    // textShadowRadius: 3,
+    backgroundColor: "#00000044",
+    marginTop: 48,
     padding: 6,
   },
 });
